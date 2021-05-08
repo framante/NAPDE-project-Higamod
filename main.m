@@ -1,5 +1,5 @@
 % main training
-n_problems = 50;
+n_problems = 200;
 n_params = 5;
 todo = "training";
 tot_time = 0.0;
@@ -50,7 +50,7 @@ n_params = 5;
 
 tot_time = 0.0;
 
-fprintf('\n.......... Problem ........\n');o
+fprintf('\n.......... Problem ........\n');
 tstart = tic;
 %v = normrnd(0, 10, [n_params,1]);
 v = ones(n_params,1);

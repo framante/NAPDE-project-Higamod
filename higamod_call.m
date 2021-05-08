@@ -715,7 +715,7 @@ function [plotStruct, obj_solverIGA, numbVerNodes] = higamod_call(v, todo)
     case {1,2,3,4,5}
         
         % mu = @(x,y) v(1).*( 1 + 100 * ( (x - 1).^2 + (y - 0.25).^2 < 0.1) );
-        mu    = @(x,y) v(1).* (  1.00 + 0*x + 0*y ); % Difusion
+        mu    = @(x,y) v(1).*(  1.00 + 0*x + 0*y ); % Difusion
         beta1 = @(x,y) v(2).*(  0.00 + 0*x + 0*y ); % Horizontal Advection
         beta2 = @(x,y) v(3).*(  0.00 + 0*x + 0*y ); % Vertical Advection
         sigma = @(x,y) v(4).*(  0.00 + 0*x + 0*y ); % Reaction
