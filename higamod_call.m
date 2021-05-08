@@ -871,9 +871,10 @@ function [plotStruct, obj_solverIGA, numbVerNodes] = higamod_call(v, todo)
     case {1,2,4,5,6}
         
         dato_dir = @(y) 0;
-        force = @(x,y) v(5).*( 1 + 0 * x + 0 * y );
+        force = @(x,y) ( 1 + 0 * x + 0 * y );
+%       force = @(x,y) v(5).*( 1 + 0 * x + 0 * y );
 %       force = @(x,y)   ( ( x - 0.5 ).^2 + ( y - 0.25 ).^2 <= 0.01)  +...
-%                        ( ( x - 1.5 ).^2 + ( y - 0.5 ).^2  <= 0.01)  + ...
+%                        ( ( x - 1.5 ).^2 + ( y - 0.5  ).^2  <= 0.01)  + ...
 %                        ( ( x - 0.5 ).^2 + ( y - 0.75 ).^2 <= 0.01) ;
 
         
