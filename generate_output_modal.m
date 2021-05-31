@@ -1,4 +1,5 @@
-function [] = generate_output_modal(u, todo, size_mb, cutx, hx)
+function [] = generate_output_modal(u, todo, size_mb, ...
+                                    cutx, hx, p, k)
     
     if todo == "training"
         fid = fopen('SolutionOutput.txt', 'a+');
