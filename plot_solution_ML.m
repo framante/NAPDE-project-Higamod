@@ -1,7 +1,7 @@
 function [] = print_solution_ML( size_mb, a_ril, b_ril, cutx, ...
                                  hx, u, bc_up, bc_down, Coeff_forma, ...
                                  caso, p, k, space, geometry, map, ...
-                                 numbVerNodes)
+                                 numbVerNodes, cmin, cmax)
     % p = degreePolySplineBasis
     % k = continuityParameter
 
@@ -132,8 +132,10 @@ function [] = print_solution_ML( size_mb, a_ril, b_ril, cutx, ...
 
     [~,~] = contourf(Xeval,Yeval,higaSol,20,'edgecolor','none');    
     colormap(jet);
-    cmin = min(min(higaSol));
-    cmax = max(max(higaSol));
+    % we used the same parameters (cmin, cmax) of the "right" plot to make
+    % a fair comparison
+    %cmin = min(min(higaSol));
+    %cmax = max(max(higaSol));
     caxis([cmin cmax])
     colorbar();
     axis([minX maxX minY maxY]);

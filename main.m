@@ -67,7 +67,7 @@ tstart = tic;
 % rng(0,'twister');
 % v = (b-a).*rand(n_params,1) + a;
 v = 20*ones(n_params,1);
-[plotStruct, obj_solverIGA, numbVerNodes] = higamod_call(v, todo);
+[plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v, todo);
 tstop = toc(tstart);
 tstop = datevec(tstop./(60*60*24));
 tot_time = tot_time + tstop;
@@ -90,7 +90,7 @@ plot_solution_ML(plotStruct.dimModalBasis,...
     plotStruct.coefficientForm,plotStruct.simulationCase,...
     plotStruct.degreePolySplineBasis,plotStruct.continuityParameter,...
     plotStruct.space,plotStruct.refDomain1D,plotStruct.map, ...
-    numbVerNodes);
+    numbVerNodes, cmin, cmax);
 
 tstop = toc(tstart);
 tstop = datevec(tstop./(60*60*24));
