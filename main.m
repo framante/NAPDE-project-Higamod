@@ -1,11 +1,11 @@
 % main training
-n_problems = 200;
+n_problems = 20;
 n_params = 5;
 todo = "training";
 tot_time = 0.0;
 
 a = 1;
-b = 10;
+b = 2;
 
 for i = 1:n_problems
     tstart = tic;
@@ -66,7 +66,7 @@ tstart = tic;
 % b = 10;
 % rng(0,'twister');
 % v = (b-a).*rand(n_params,1) + a;
-v = 20*ones(n_params,1);
+v = 1*ones(n_params,1);
 [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v, todo);
 tstop = toc(tstart);
 tstop = datevec(tstop./(60*60*24));
