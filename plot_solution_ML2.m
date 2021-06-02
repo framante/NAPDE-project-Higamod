@@ -81,7 +81,7 @@ function [] = plot_solution_ML2(size_mb, a_ril, b_ril, cutx,...
     % read the predicted u which is a matrix (size_mb * nnx)
     u_predicted = readmatrix('output_ML.txt');
     % reshape u as a vector, the concatenation must be done by rows!!
-    u = reshape(u_predicted', [size_mn*nnx,1]);    
+    u = reshape(u_predicted', [size_mb*nnx,1]);    
     
     switch caso
             case {1,2,3,4,5,6,7,8,9,10}
