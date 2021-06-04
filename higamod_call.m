@@ -56,7 +56,7 @@ function [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v,
     numbModes       = 6;
     nd              = length(numbModes); 
 %     stepHorMesh     = (maxHor-minHor)*0.1*ones(size(numbModes));
-    stepHorMesh     = (maxHor-minHor)*0.02*ones(size(numbModes));
+    stepHorMesh     = (maxHor-minHor)*0.02*ones(size(numbModes)); % 51 nodes
     numbElements    = round((maxHor-minHor)/stepHorMesh); %nKnots
     
     %% Isogeometric basis properties
