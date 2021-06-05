@@ -27,32 +27,32 @@ end
 fprintf('\n..........total time needed is %d hours %d minutes %f seconds..........\n', tot_time(4), tot_time(5), tot_time(6));
 
 %% main testing
-n_problems = 10;
-n_params = 5;
-todo = "testing";
-tot_time = 0.0;
-
-a = 1;
-b = 10;
-
-for i = 1:n_problems
-    tstart = tic;
-    fprintf('\n..........Problem number %d........\n', i);
-    rng(i,'twister');
-    v = (b-a).*rand(n_params,1) + a;
-    higamod_call(v, todo);
-    tstop = toc(tstart);
-    tstop = datevec(tstop./(60*60*24));
-    tot_time = tot_time + tstop;
-    fprintf('\n..........time needed for problem number %d is %f seconds..........\n', i, tstop(6));    
-end
-
-for i = length(tot_time):-1:2
-    tot_time(i-1) = floor(tot_time(i)/60);
-    tot_time(i) = tot_time(i) - tot_time(i-1)*60;
-end
-
-fprintf('\n..........total time needed is %d hours %d minutes %f seconds..........\n', tot_time(4), tot_time(5), tot_time(6));
+% n_problems = 10;
+% n_params = 5;
+% todo = "testing";
+% tot_time = 0.0;
+% 
+% a = 1;
+% b = 10;
+% 
+% for i = 1:n_problems
+%     tstart = tic;
+%     fprintf('\n..........Problem number %d........\n', i);
+%     rng(i,'twister');
+%     v = (b-a).*rand(n_params,1) + a;
+%     higamod_call(v, todo);
+%     tstop = toc(tstart);
+%     tstop = datevec(tstop./(60*60*24));
+%     tot_time = tot_time + tstop;
+%     fprintf('\n..........time needed for problem number %d is %f seconds..........\n', i, tstop(6));    
+% end
+% 
+% for i = length(tot_time):-1:2
+%     tot_time(i-1) = floor(tot_time(i)/60);
+%     tot_time(i) = tot_time(i) - tot_time(i-1)*60;
+% end
+% 
+% fprintf('\n..........total time needed is %d hours %d minutes %f seconds..........\n', tot_time(4), tot_time(5), tot_time(6));
 
 %% main testing for 1 problem
 todo = "testing";
