@@ -53,7 +53,7 @@ function [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v,
     domainLimit_inX      = [minHor,maxHor];  
     domainLimit_inY      = [minVer,maxVer];
     
-    numbModes       = 6;
+    numbModes       = 10;
     nd              = length(numbModes); 
 %     stepHorMesh     = (maxHor-minHor)*0.1*ones(size(numbModes));
     stepHorMesh     = (maxHor-minHor)*0.02*ones(size(numbModes)); % 51 nodes
@@ -200,7 +200,7 @@ function [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v,
         %%%%%%%%%%%%%%%%%%%%%%%%%%
         
         minX = +0.0;
-        maxX = +2.0;
+        maxX = +6.0;
         minY = +0.0;
         maxY = +1.0;
                 
@@ -718,7 +718,8 @@ function [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v,
         
         % mu = @(x,y) v(1).*( 1 + 100 * ( (x - 1).^2 + (y - 0.25).^2 < 0.1) );
         mu    = @(x,y) v(1).*(  1.00 + 0*x + 0*y ); % Difusion
-        beta1 = @(x,y) v(2).*(  0.00 + 0*x + 0*y ); % Horizontal Advection
+        %beta1 = @(x,y) v(2).*(  0.00 + 0*x + 0*y ); % Horizontal Advection
+        beta1 = @(x,y) v(2).*(  1.00 + 0*x + 0*y );
         beta2 = @(x,y) v(3).*(  0.00 + 0*x + 0*y ); % Vertical Advection
         sigma = @(x,y) v(4).*(  0.00 + 0*x + 0*y ); % Reaction
         
@@ -873,12 +874,12 @@ function [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v,
     case {1,2,4,5,6}
         
         dato_dir = @(y) 0;
-%        force = @(x,y) ( 1 + 0 * x + 0 * y );
-       force = @(x,y) v(5).*( 1 + 0 * x + 0 * y );
+%       force = @(x,y) ( 1 + 0 * x + 0 * y );
+%       force = @(x,y) v(5).*( 1 + 0 * x + 0 * y );
 %       force = @(x,y)   ( ( x - 0.5 ).^2 + ( y - 0.25 ).^2 <= 0.01)  +...
 %                        ( ( x - 1.5 ).^2 + ( y - 0.5  ).^2  <= 0.01)  + ...
 %                        ( ( x - 0.5 ).^2 + ( y - 0.75 ).^2 <= 0.01) ;
-
+        force = @(x,y) v(5).*(( x - 0.75 ).^2 + ( y - 0.5 ).^2 <= 0.01);
         
     
     case {3}
