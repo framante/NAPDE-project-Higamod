@@ -29,6 +29,7 @@ end
 fprintf('\n..........total time needed is %d hours %d minutes %f seconds..........\n', tot_time(4), tot_time(5), tot_time(6));
 
 %% main testing
+
 % n_problems = 10;
 % n_params = 5;
 % todo = "testing";
@@ -81,6 +82,7 @@ end
 fprintf('\n..........total time needed is %d hours %d minutes %f seconds..........\n', tot_time(4), tot_time(5), tot_time(6));
 
 %% plotting the solution obtained through the NN
+
 tstart = tic;
 
 plot_solution_ML(plotStruct.dimModalBasis,...
