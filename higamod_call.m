@@ -879,7 +879,7 @@ function [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v,
 %       force = @(x,y)   ( ( x - 0.5 ).^2 + ( y - 0.25 ).^2 <= 0.01)  +...
 %                        ( ( x - 1.5 ).^2 + ( y - 0.5  ).^2  <= 0.01)  + ...
 %                        ( ( x - 0.5 ).^2 + ( y - 0.75 ).^2 <= 0.01) ;
-        force = @(x,y) v(5).*(( x - 0.75 ).^2 + ( y - 0.5 ).^2 <= 1e-04);
+        force = @(x,y) v(5).*(( x - 0.75 ).^2 + ( y - 0.5 ).^2 <= 0.01);
         
     
     case {3}
