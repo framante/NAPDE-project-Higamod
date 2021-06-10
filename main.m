@@ -4,7 +4,7 @@ n_params = 5;
 todo = "training";
 tot_time = 0.0;
 
-range_beta = [1, 5, 10, 15, 20];
+range_beta = [1:0.1:10];
 range_force = [1:0.1:10];
 
 for i = 1:n_problems
@@ -66,7 +66,7 @@ tot_time = 0.0;
 fprintf('\n.......... Problem ........\n');
 tstart = tic;
 v = ones([n_params,1]);
-v(2) = 18;
+v(2) = 7;
 v(5) = 3.4;
 [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v, todo);
 tstop = toc(tstart);
@@ -107,5 +107,5 @@ plot_solution_ML(plotStruct.dimModalBasis,...
 
 tstop = toc(tstart);
 tstop = datevec(tstop./(60*60*24));
-fprintf('\n..........time needed for NN to solve the problem is %f seconds..........\n', tstop(6)); 
+fprintf('\n..........time needed for NN to plot the problem is %f seconds..........\n', tstop(6)); 
 
