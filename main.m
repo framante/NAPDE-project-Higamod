@@ -66,7 +66,7 @@ tot_time = 0.0;
 fprintf('\n.......... Problem ........\n');
 tstart = tic;
 v = ones([n_params,1]);
-v(2) = 7;
+v(2) = 3;
 v(5) = 3.4;
 [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v, todo);
 tstop = toc(tstart);
