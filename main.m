@@ -4,7 +4,7 @@ n_params = 5;
 todo = "training";
 tot_time = 0.0;
 
-range_beta = [1:0.1:10];
+range_beta = [1:0.1:5];
 range_force = [1:0.1:10];
 
 for i = 1:n_problems
