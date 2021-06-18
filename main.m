@@ -4,16 +4,19 @@ n_params = 5;
 todo = "training";
 tot_time = 0.0;
 
-range_beta = [1:0.1:5];
-range_force = [1:0.1:10];
+range_mu = [0:0.1:1];
+range_beta1 = [0:0.1:8];
+range_beta2 = [0:0.1:2];
+range_force = [8:0.1:12];
 
 for i = 1:n_problems
     tstart = tic;
     fprintf('\n..........Problem number %d........\n', i);
     rng(i,'twister');
     v = ones([n_params,1]);
-    v(1) = 0.24;
-    v(2) = range_beta(randi(length(range_beta),1));
+    v(1) = range_mu(randi(length(range_beta),1));
+    v(2) = range_beta1(randi(length(range_beta),1));
+    v(3) = range_beta2(randi(length(range_beta),1));
     v(5) = range_force(randi(length(range_force),1));
     higamod_call(v, todo);
     tstop = toc(tstart);
