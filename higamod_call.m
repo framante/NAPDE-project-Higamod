@@ -708,7 +708,7 @@ function [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v,
     % Vertical direction
     
     %numbVerNodes = 10 * numbModes;
-    numbVerNodes = 32;
+    numbVerNodes = 64;
 
     %% Coefficients of the bilinear form
     %-------------------------------------------------------------------------%

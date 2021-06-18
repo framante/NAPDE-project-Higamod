@@ -1,5 +1,5 @@
 % main training
-n_problems = 500;
+n_problems = 5;
 n_params = 5;
 todo = "training";
 tot_time = 0.0;
@@ -14,9 +14,9 @@ for i = 1:n_problems
     fprintf('\n..........Problem number %d........\n', i);
     rng(i,'twister');
     v = ones([n_params,1]);
-    v(1) = range_mu(randi(length(range_beta),1));
-    v(2) = range_beta1(randi(length(range_beta),1));
-    v(3) = range_beta2(randi(length(range_beta),1));
+    v(1) = range_mu(randi(length(range_mu),1));
+    v(2) = range_beta1(randi(length(range_beta1),1));
+    v(3) = range_beta2(randi(length(range_beta2),1));
     v(5) = range_force(randi(length(range_force),1));
     higamod_call(v, todo);
     tstop = toc(tstart);
