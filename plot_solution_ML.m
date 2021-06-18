@@ -134,8 +134,8 @@ function [] = print_solution_ML( size_mb, a_ril, b_ril, cutx, ...
     colormap(jet);
     % we used the same parameters (cmin, cmax) of the "right" plot to make
     % a fair comparison
-    %cmin = min(min(higaSol));
-    %cmax = max(max(higaSol));
+    cmin = min(min(higaSol));
+    cmax = max(max(higaSol));
     caxis([cmin cmax])
     colorbar();
     axis([minX maxX minY maxY]);
