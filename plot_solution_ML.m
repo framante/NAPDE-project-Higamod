@@ -132,8 +132,10 @@ function [] = print_solution_ML( size_mb, a_ril, b_ril, cutx, ...
 
     [~,~] = contourf(Xeval,Yeval,higaSol,20,'edgecolor','none');    
     colormap(jet);
-    % we used the same parameters (cmin, cmax) of the "right" plot to make
-    % a fair comparison
+    % IMPORTANT: if we use (cmin, cmax) of the original problem we make 
+    % a fair comparison -> COMMENT
+    % if we recompute (cmin, cmax) the plot is nicer of course -> NO
+    % COMMENT
     cmin = min(min(higaSol));
     cmax = max(max(higaSol));
     caxis([cmin cmax])
