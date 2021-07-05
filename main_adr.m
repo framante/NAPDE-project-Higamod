@@ -18,7 +18,7 @@ for i = 1:n_problems
     v(2) = range_beta1(randi(length(range_beta1),1));
     v(3) = range_beta2(randi(length(range_beta2),1));
     v(5) = range_force(randi(length(range_force),1));
-    higamod_call(v, todo);
+    higamod_call_adr(v, todo);
     tstop = toc(tstart);
     tstop = datevec(tstop./(60*60*24));
     tot_time = tot_time + tstop;
@@ -47,7 +47,7 @@ fprintf('\n..........total time needed is %d hours %d minutes %f seconds........
 %     fprintf('\n..........Problem number %d........\n', i);
 %     rng(i,'twister');
 %     v = (b-a).*rand(n_params,1) + a;
-%     higamod_call(v, todo);
+%     higamod_call_adr(v, todo);
 %     tstop = toc(tstart);
 %     tstop = datevec(tstop./(60*60*24));
 %     tot_time = tot_time + tstop;
@@ -74,7 +74,7 @@ v(1) = 0.24;
 v(2) = 5;
 v(3) = 1;
 v(5) = 10;
-[plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v, todo);
+[plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call_adr(v, todo);
 tstop = toc(tstart);
 tstop = datevec(tstop./(60*60*24));
 tot_time = tot_time + tstop;
