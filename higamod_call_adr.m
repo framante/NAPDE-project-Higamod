@@ -1,4 +1,4 @@
-function [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call(v, todo)
+function [plotStruct, obj_solverIGA, numbVerNodes, cmin, cmax] = higamod_call_adr(v, todo)
 % the input:
 % v = vector coefficients (dimension = n_params) to premultiply each of the params
 % todo = "testing" or "training" depending on what you're doing
